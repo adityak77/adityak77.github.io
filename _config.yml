@@ -82,12 +82,12 @@ analytics:
 author:
   name             : "Aditya Kannan"
   avatar           : "profile.png"
-  bio              : "MS CS @ CMU"
-  location         : "Redmond, WA"
+  bio              : "Hudson River Trading"
+  location         : "New York City, USA"
   employer         :
   pubmed           :
   googlescholar    :
-  email            : "adityakannan@cmu.edu"
+  email            : 
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
   bitbucket        :
