@@ -1,0 +1,80 @@
+{% assign papers_to_show = include.papers | default: site.data.papers %}
+{% if papers_to_show and papers_to_show.size > 0 %}
+  {% if include.heading %}<h2>{{ include.heading }}</h2>{% endif %}
+  <ul class="list-unstyled">
+    {% for paper in papers_to_show %}
+      <li class="mb-4 clearfix">
+        <div class="float-left mr-3 mb-2" style="width: 240px; min-width: 240px; min-height: 150px;">
+          {% if paper.video or paper.image %}
+            {% assign media_link = paper.website | default: paper.arxiv %}
+            {% if paper.video %}
+              {% assign vid_path = paper.video | prepend: 'assets/img/' %}
+              {% if media_link %}
+                <a href="{{ media_link }}" target="_blank" rel="noopener noreferrer">
+                  <video autoplay loop muted playsinline src="{{ vid_path | relative_url }}" class="img-fluid rounded" style="max-width: 240px;"></video>
+                </a>
+              {% else %}
+                <video autoplay loop muted playsinline src="{{ vid_path | relative_url }}" class="img-fluid rounded" style="max-width: 240px;"></video>
+              {% endif %}
+            {% else %}
+              {% assign img_path = paper.image | prepend: 'assets/img/' %}
+              {% if media_link %}
+                <a href="{{ media_link }}" target="_blank" rel="noopener noreferrer">
+                  <img src="{{ img_path | relative_url }}" alt="{{ paper.title }}" class="img-fluid rounded" style="max-width: 240px;">
+                </a>
+              {% else %}
+                <img src="{{ img_path | relative_url }}" alt="{{ paper.title }}" class="img-fluid rounded" style="max-width: 240px;">
+              {% endif %}
+            {% endif %}
+          {% endif %}
+        </div>
+        <div>
+          {% assign title_link = paper.website | default: paper.arxiv %}
+          {% if title_link %}
+            <a href="{{ title_link }}" target="_blank" rel="noopener noreferrer"><strong>{{ paper.title }}</strong></a>
+          {% else %}
+            <strong>{{ paper.title }}</strong>
+          {% endif %}
+          {% if paper.authors %}
+            <p class="mb-0 mt-0 text-muted small">{{ paper.authors }}</p>
+          {% endif %}
+          {% if paper.venue or paper.year %}
+            <span class="text-muted small">
+              {% if paper.venue %}{{ paper.venue }}{% endif %}
+              {% if paper.year %}{% if paper.venue %} {% endif %}{{ paper.year }}{% endif %}
+            </span>
+          {% endif %}
+          <p class="mb-0 mt-1 small">{% if paper.website %}<a href="{{ paper.website }}" target="_blank" rel="noopener noreferrer">website</a>{% endif %}{% if paper.arxiv %}{% if paper.website %} | {% endif %}<a href="{{ paper.arxiv }}" target="_blank" rel="noopener noreferrer">arXiv</a>{% endif %}{% if paper.abstract %}{% if paper.website or paper.arxiv %} | {% endif %}<a href="javascript:void(0)" class="paper-toggle" data-target="abs-{{ forloop.index0 }}">abstract</a>{% endif %}{% if paper.bibtex %}{% if paper.website or paper.arxiv or paper.abstract %} | {% endif %}<a href="javascript:void(0)" class="paper-toggle" data-target="bib-{{ forloop.index0 }}">bibtex</a>{% endif %}</p>
+          {% if paper.abstract %}
+            <div id="abs-{{ forloop.index0 }}" class="paper-panel" style="display: none;">
+              <p class="mt-1 mb-0 text-muted" style="max-width: 60em;">{{ paper.abstract }}</p>
+            </div>
+          {% endif %}
+          {% if paper.bibtex %}
+            <div id="bib-{{ forloop.index0 }}" class="paper-panel" style="display: none;">
+              <pre class="mt-1 mb-0 small p-2" style="max-width: 50em; overflow-x: auto;"><code>{{ paper.bibtex | strip }}</code></pre>
+            </div>
+          {% endif %}
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+  <script>
+    document.querySelectorAll('.paper-toggle').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var target = document.getElementById(this.dataset.target);
+        var paper = this.closest('li');
+        var isVisible = target.style.display !== 'none';
+        // close all panels in this paper
+        paper.querySelectorAll('.paper-panel').forEach(function(p) {
+          p.style.display = 'none';
+        });
+        // if it wasn't already open, show it
+        if (!isVisible) {
+          target.style.display = '';
+        }
+      });
+    });
+  </script>
+{% endif %}

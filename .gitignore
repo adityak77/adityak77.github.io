@@ -1,2 +1,12 @@
-_site/
+**/.DS_Store
 
+# Jekyll
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# Logs
+*.log
+
+# Bundler
+vendor/bundle/

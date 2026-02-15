@@ -1,16 +1,10 @@
 ---
-layout: archive
-title: "Publications"
+layout: page
+title: publications
 permalink: /publications/
-author_profile: true
+nav: true
+nav_order: 1
+description: Publications and pre-prints.
 ---
 
-{% if author.googlescholar %}
-  You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
-{% endif %}
-
-{% include base_path %}
-
-{% for post in site.publications reversed %}
-  {% include archive-single.html %}
-{% endfor %}
+{% include papers.liquid papers=site.data.papers heading="Publications" %}

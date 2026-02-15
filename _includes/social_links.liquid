@@ -1,0 +1,25 @@
+{% comment %}
+  Renders social links from site.data.socials. Replaces jekyll-socials tag for GitHub Pages compatibility.
+{% endcomment %}
+{% if site.data.socials %}
+  <span class="social-links">
+    {% for social in site.data.socials %}
+      {% case social[0] %}
+        {% when 'github_username' %}
+          <a href="https://github.com/{{ social[1] }}" target="_blank" rel="noopener noreferrer" title="GitHub" class="mr-2"><i class="fa-brands fa-github"></i></a>
+        {% when 'scholar_userid' %}
+          <a href="https://scholar.google.com/citations?user={{ social[1] }}" target="_blank" rel="noopener noreferrer" title="Google Scholar" class="mr-2"><i class="ai ai-google-scholar"></i></a>
+        {% when 'linkedin_username' %}
+          <a href="https://www.linkedin.com/in/{{ social[1] }}" target="_blank" rel="noopener noreferrer" title="LinkedIn" class="mr-2"><i class="fa-brands fa-linkedin"></i></a>
+        {% when 'email' %}
+          <a href="mailto:{{ social[1] }}" title="Email" class="mr-2"><i class="fa-solid fa-envelope"></i></a>
+        {% when 'cv_pdf' %}
+          <a href="{{ social[1] | relative_url }}" target="_blank" rel="noopener noreferrer" title="CV" class="mr-2"><i class="fa-solid fa-file-pdf"></i></a>
+        {% when 'twitter_username' %}
+          <a href="https://twitter.com/{{ social[1] }}" target="_blank" rel="noopener noreferrer" title="Twitter" class="mr-2"><i class="fa-brands fa-twitter"></i></a>
+        {% when 'orcid_id' %}
+          <a href="https://orcid.org/{{ social[1] }}" target="_blank" rel="noopener noreferrer" title="ORCID" class="mr-2"><i class="ai ai-orcid"></i></a>
+      {% endcase %}
+    {% endfor %}
+  </span>
+{% endif %}

@@ -1,0 +1,59 @@
+# Full publications list – used for /publications/ page. Add selected: true to show on about page.
+# Fields: title, authors, video/image, website, arxiv, abstract, bibtex, year, venue, selected (default false)
+- title: "DEFT: Dexterous Fine-Tuning for Real-World Hand Policies"
+  selected: true
+  authors: "Aditya Kannan*, Kenneth Shaw*, Shikhar Bahl, Pragna Mannam, Deepak Pathak"
+  video: deft.mp4
+  website: "https://dexterous-finetuning.github.io/"
+  arxiv: "https://arxiv.org/abs/2310.19797"
+  abstract: "Dexterity is often seen as a cornerstone of complex manipulation. Humans are able to perform a host of skills with their hands, from making food to operating tools. In this paper, we investigate these challenges, especially in the case of soft, deformable objects as well as complex, relatively long-horizon tasks. Although, learning such behaviors from scratch can be data inefficient. To circumvent this, we propose a novel approach, DEFT (DExterous Fine-Tuning for Hand Policies), that leverages human-driven priors, which are executed directly in the real world. In order to improve upon these priors, DEFT involves an efficient online optimization procedure. With the integration of human-based learning and online fine-tuning, coupled with a soft robotic hand, DEFT demonstrates success across various tasks, establishing a robust, data-efficient pathway toward general dexterous manipulation."
+  bibtex: |
+    @article{kannan2023deft,
+      title={DEFT: Dexterous Fine-Tuning for Real-World Hand Policies},
+      author={Kannan, Aditya and Shaw, Kenneth and Bahl, Shikhar and Mannam, Pragna and Pathak, Deepak},
+      journal={CoRL},
+      year={2023}
+    }
+  year: 2023
+  venue: "CoRL"
+
+- title: "Learning from human videos for robotic manipulation"
+  selected: false
+  authors: "Aditya Kannan"
+  image: rewards_human_videos.png
+  website: "http://reports-archive.adm.cs.cmu.edu/anon/2023/CMU-CS-23-124.pdf"
+  year: 2024
+  venue: "Master's Thesis"
+
+- title: "Learning dexterity from human hand motion in internet videos"
+  selected: true
+  authors: "Kenneth Shaw*, Shikhar Bahl*, Aravind Sivakumar, Aditya Kannan, Deepak Pathak"
+  video: internet.mp4
+  website: "https://journals.sagepub.com/doi/full/10.1177/02783649241227559"
+  arxiv: "https://journals.sagepub.com/doi/full/10.1177/02783649241227559"
+  abstract: "To build general robotic agents that can operate in many environments, it is often useful for robots to collect experience in the real world. However, unguided experience collection is often not feasible due to safety, time, and hardware restrictions. We thus propose leveraging the next best thing as real world experience: videos of humans using their hands. To utilize these videos, we develop a method that retargets any 1st person or 3rd person video of human hands and arms into the robot hand and arm trajectories. While retargeting is a difficult problem, our key insight is to rely on only internet human hand video to train it. We use this method to present results in two areas: First, we build a system that enables any human to control a robot hand and arm, simply by demonstrating motions with their own hand. The robot observes the human operator via a single RGB camera and imitates their actions in real-time. This enables the robot to collect real-world experience safely using supervision. See these results at https://robotic-telekinesis.github.io. Second, we retarget in-the-wild human internet video into task-conditioned pseudo-robot trajectories to use as artificial robot experience. This learning algorithm leverages action priors from human hand actions, visual features from the images, and physical priors from dynamical systems to pretrain typical human behavior for a particular robot task. We show that by leveraging internet human hand experience, we need fewer robot demonstrations compared to many other methods. See these results at https://video-dex.github.io"
+  bibtex: |
+    @article{shaw_internetvideos,
+      title={Learning dexterity from human hand motion in internet videos},
+      author={Shaw, Kenneth and Bahl, Shikhar and Sivakumar, Aravind and Kannan, Aditya and Pathak, Deepak},
+      journal={International Journal of Robotics Research},
+      year={2024}
+    }
+  year: 2024
+  venue: "IJRR"
+
+- title: "HypoRiPPAtlas as an Atlas of hypothetical natural products for mass spectrometry database search"
+  selected: false
+  authors: "Yi-Yuan Lee, Mustafa Guler, Desnor N. Chigumba, Shen Wang, Neel Mittal, Cameron Miller, Benjamin Krummenacher, Haodong Liu, Liu Cao, Aditya Kannan, Keshav Narayan, Samuel T. Slocum, Bryan L. Roth, Alexey Gurevich, Bahar Behsaz, Roland D. Kersten, Hosein Mohimani"
+  website: "https://www.nature.com/articles/s41467-023-39905-4"
+  abstract: "Recent analyses of public microbial genomes have found over a million biosynthetic gene clusters, the natural products of the majority of which remain unknown. Additionally, GNPS harbors billions of mass spectra of natural products without known structures and biosynthetic genes. We bridge the gap between large-scale genome mining and mass spectral datasets for natural product discovery by developing HypoRiPPAtlas, an Atlas of hypothetical natural product structures, which is ready-to-use for in silico database search of tandem mass spectra. HypoRiPPAtlas is constructed by mining genomes using seq2ripp, a machine-learning tool for the prediction of ribosomally synthesized and post-translationally modified peptides (RiPPs). In HypoRiPPAtlas, we identify RiPPs in microbes and plants. HypoRiPPAtlas could be extended to other natural product classes in the future by implementing corresponding biosynthetic logic. This study paves the way for large-scale explorations of biosynthetic pathways and chemical structures of microbial and plant RiPP classes."
+  year: 2023
+  venue: "Nature Communications"
+
+- title: "Cost-effectiveness of Vitamin A supplementation among children in three sub-Saharan African countries: An individual-based simulation model using estimates from Global Burden of Disease 2019"
+  selected: false
+  authors: "Aditya Kannan, Derrick Tsoi, Yongquan Xie, Cody Horst, James Collins, Abraham Flaxman"
+  website: "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0266495"
+  abstract: "Vitamin A Supplementation (VAS) is a cost-effective intervention to decrease mortality associated with measles and diarrheal diseases among children aged 6–59 months in low-income countries. Recently, experts have suggested that other interventions like large-scale food fortification and increasing the coverage of measles vaccination might provide greater impact than VAS. In this study, we conducted a cost-effectiveness analysis of a VAS scale-up in three sub-Saharan African countries."
+  year: 2022
+  venue: "PLOS ONE"

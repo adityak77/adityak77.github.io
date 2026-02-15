@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<div class="post">
+  <header class="post-header">
+    <h1 class="post-title">{{ page.title }}</h1>
+    {% if site.blog_description %}
+      <p class="post-description">{{ site.blog_description }}</p>
+    {% endif %}
+  </header>
+
+  <article>
+    <ul class="post-list list-unstyled">
+      {% assign published_posts = site.posts | where_exp: "post", "post.layout != 'draft'" %}
+      {% for post in published_posts %}
+        <li class="mb-4">
+          <h3>
+            <a class="post-title" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          </h3>
+          <p class="post-meta text-muted small">
+            {{ post.date | date: '%B %d, %Y' }}
+          </p>
+          {% if post.description %}
+            <p>{{ post.description }}</p>
+          {% elsif post.excerpt %}
+            <p>{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+    {% if published_posts.size == 0 %}
+      <p class="text-muted">No posts yet!</p>
+    {% endif %}
+  </article>
+</div>
