@@ -2,7 +2,7 @@
 # Site settings
 # -----------------------------------------------------------------------------
 
-title: 
+title: Aditya Kannan
 first_name: Aditya
 middle_name:
 last_name: Kannan
@@ -16,7 +16,7 @@ keywords: Aditya Kannan, machine learning, trading, deep learning, robotics, CMU
 lang: en
 icon: 
 
-url: https://adityak77.github.io
+url: https://adityakannan.com
 baseurl: "" # leave blank for GitHub Pages user site
 last_updated: false # set to true if you want to display last updated in the footer
 impressum_path: # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
